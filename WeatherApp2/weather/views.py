@@ -17,6 +17,8 @@ def index(request):
     all_cities=[]
 
     for city in cities:
+        if city==city:
+            city.delete()
         res = requests.get(url.format(city)).json()
         city_info={
             'city':city.name,
